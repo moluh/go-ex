@@ -1,12 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"runtime"
+)
 
 func main() {
 	// numbers()
 	// text()
 	// conversiones()
-	constantes()
+	// constantes()
+	condicionales()
+}
+
+func condicionales() {
+	if valor := rand.Int(); valor%2 == 0 {
+		fmt.Println("El número ", valor, " es par")
+	} else {
+		fmt.Println("El número ", valor, " NO es par")
+	}
+	fmt.Println("Adiós")
+
+	arch := runtime.GOARCH
+	os := runtime.GOOS
+
+	fmt.Println("ARCH: ", arch)
+	fmt.Println("OS: ", os)
+
+	fmt.Println("Adiós")
 }
 
 func numbers() {
