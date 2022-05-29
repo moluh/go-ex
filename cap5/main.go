@@ -4,8 +4,12 @@ import "fmt"
 
 func main() {
 
+	// Funciones retorno de multiples valores
 	// max, min, c := MaxMin(20, 30, 32)
+
+	// retorno de valores nombrados
 	// max, min, c := MaxMinEspecificado(20, 30, 32)
+
 	// fmt.Println("============")
 	// fmt.Println("max", max)
 	// fmt.Println("min", min)
@@ -15,9 +19,19 @@ func main() {
 	max, _, _ := MaxMinEspecificado(20, 30, 32)
 	fmt.Println("============")
 	fmt.Println("max", max)
+
+	// Valores por referencia
+	a := 3
+	fmt.Println("a", a)
+	incrementa(&a)
+	fmt.Println("a", a)
+
 }
 
-// Funciones retorno de multiples valores
+func incrementa(a *int) {
+	*a++
+}
+
 func MaxMin(a, b, c int) (int, int, int) {
 	if a > b {
 		return a, b, c
@@ -25,7 +39,6 @@ func MaxMin(a, b, c int) (int, int, int) {
 	return b, a, c
 }
 
-// retorno de valores nombrados
 func MaxMinEspecificado(a, b, c int) (max int, min int, C int) {
 	if a > b {
 		max = a
